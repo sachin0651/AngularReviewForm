@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Angular Js</title>
+<script src="./js/angular.min.js"></script>
+<script src="./js/main.js"></script>
+<link href="./css/bootstrap.css" rel="stylesheet" />
+<link href="./css/bootstrap.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="./css/style.css" rel="stylesheet">
+</head>
+<body class="home page-id-1" data-ng-app="ApplicationForm" >
+ <div id="page">
+  <article id="wrapper" class="container">
+  <div class="jumbotron"> <h2>Forms & Models</h2></div>
+  <h4>Review of the product:</h4>
+  <img src="img/maxresdefault.jpg" class="review-product" alt="reviewproduct">
+ <div data-ng-controller="reviewController as reviewCtrl">
+  <form name="reviewForm" role="form"  method="post"  data-ng-submit="reviewCtrl.addReview(product) novalidate">
+   <blockquote >
+    <b class="stars"> Ratings {{ stars }}</b>
+    <p>  {{review.body }} </p>
+    <cite class="author-mail">  By: {{ review.author }}</cite>
+    
+   </blockquote>
+   
+  <div class="row">
+  <select class="form-control" data-ng-model="stars" >
+  <option value=" * "> 1 star</option>
+  <option value=" * * "> 2 star</option>
+  <option value="* * *"> 3 Star </option>
+  <option value="* * * *"> 4 Star </option>
+  <option value="* * * * *"> 5 Star </option>
+  </select>
+  
+  </div>
+  <div class="row">
+  <Textarea class="form-control "  data-ng-model="review.body" name="body" required></Textarea>
+  <span style="color:red" ng-show="reviewForm.body.$dirty && reviewForm.body.$invalid">
+  <span ng-show="reviewForm.body.$error.required">Username is required.</span>
+  </span>
+  
+  </div>
+  <div class="row">
+  <label>By: </label>
+  </div>
+  <div class="row">
+  <input type="email" class="form-control" data-ng-model="review.author" name="email" required>
+  <span style="color:red" ng-show="reviewForm.email.$dirty && reviewForm.email.$invalid">
+  <span ng-show="reviewForm.email.$error.required">Email is required.</span>
+  <span ng-show="reviewForm.email.$error.email">Invalid email address.</span>
+  </span>
+  </div>
+  <div class="row">
+  <button type="submit" class="btn btn-success pull-right" data-ng-click="resetForm(review)" ng-disabled="reviewForm.author.$dirty && reviewForm.author.$invalid ||  
+  reviewForm.body.$dirty && reviewForm.body.$invalid"> submit</button>
+  </div>
+  </form>
+  </div>
+  </article>
+</div>
+</body>
+</html>

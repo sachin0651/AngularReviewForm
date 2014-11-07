@@ -1,0 +1,21 @@
+.container .row {
+  margin:5px;
+}
+#wrapper{
+  background:#DAE3F3;
+}
+
+.stars{
+  color:green;
+}
+.author-mail{
+  color:blue;
+}
+.review-product{
+  width:200px;
+  height:100px;
+}
+
+input.ng-valid, textarea.ng-valid {
+  border: 1px solid green;
+}
