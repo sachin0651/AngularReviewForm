@@ -1,0 +1,35 @@
+.container .row{
+  margin:5px;
+}
+.row label{
+  margin:5px;
+}
+.jumbotron h1, .jumbotron h2{
+  color:#CCFF99;
+  text-shadow:2px 2px 8px #FF0000;
+}
+.glyphicon-home{
+  color:#FF6600;
+}
+input{
+  background-color:lightyellow !important;
+}
+input.ng-valid {
+  border: 1px solid green;
+}
+input.ng-invalid{
+  border: 1px solid red;
+}
+input.ng-pristine {
+  border: 1px solid gray;
+}
+.nav-pills > li > a:hover{
+  background-color:#FFC266;
+}
+.result-hide{
+  display:none;
+}
+/** weight to lbs converter **/
+.resetbtn{
+  margin:5px auto;
+}

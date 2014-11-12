@@ -1,0 +1,30 @@
+<div class="jumbotron"><h1>Kg To Lbs</h1></div>
+         
+        <form name="lbsconverterForm" novalidate>
+          <div class="row">
+                   
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right awv-text-left">         
+                <label for="height_feet">Weight in Kg:</label>
+              </div> 
+                   
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">            
+                <input type="number" class="form-control text-center " id="weight_kg" name="weight" size="4" maxlength="4" tabindex="1" title="Enter only numbers" data-ng-model="convert.weight" required> 
+                <span class="help-block text-center">Kilogram</span>
+                <span style="color:red" data-ng-show="lbsconverterForm.weight.$dirty && lbsconverterForm.weight.$invalid">
+                <span data-ng-show="lbsconverterForm.weight.$error.required">Weight is required.</span>
+                </span>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2">
+              <img data-ng-src="images/arrow_bidirectional_icon.jpg" class="img-responsive">
+              </div>
+            <div class="col-lg-3 col-md-3">
+            <label> Weight in Lbs : </label>
+            </div>
+            <div class="col-lg-2">
+              <span id="lbs_text" data-ng-bind="lbs"></span>
+            </div>
+           </div> <!-- row end -->
+           <div class="text-center resetbtn">
+           <button type="reset" class="btn btn-danger" data-ng-click="resetForm(convert)">Reset</button>
+           </div>
+       </form>

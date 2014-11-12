@@ -1,0 +1,47 @@
+    <div class="jumbotron"><h1>BMI Calculator</h1></div>
+     
+	<form name="converterForm" novalidate>
+      <div class="row">
+               
+          <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 text-right awv-text-left">         
+            <label for="height_feet">Height:</label>
+          </div> 
+               
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">            
+            <input type="number" class="form-control text-center " id="height_feet" name="feet" size="4" maxlength="1" tabindex="1" title="Enter only numbers" data-ng-model="convert.feet" required> 
+            <span class="help-block text-center">Feet</span>
+            <span style="color:red" data-ng-show="converterForm.feet.$dirty && converterForm.feet.$invalid">
+                <span data-ng-show="converterForm.feet.$error.required">Feet is required.</span>
+            </span>
+          </div>
+         
+        
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+            <input type="number" class="form-control text-center " id="height_inches" name="inches" size="2" maxlength="3" tabindex="2" title="Enter only numbers" data-ng-model="convert.inches" required> 
+            <span class="help-block text-center">Inches</span>
+             <span style="color:red" data-ng-show="converterForm.inches.$dirty && converterForm.inches.$invalid">
+                <span data-ng-show="converterForm.inches.$error.required">Inches is required.</span>
+             </span>
+	  </div>
+
+	  <div class="col-lg-4 col-md-4 col-sm-3 col-xs-4">
+            <input type="number" class="form-control text-center " id="user_weight" name="weight" size="2" maxlength="5" tabindex="3" title="Enter only numbers" data-ng-model="convert.weight" required> 
+            <span class="help-block text-center">Lbs</span>
+             <span style="color:red" data-ng-show="converterForm.weight.$dirty && converterForm.weight.$invalid">
+                <span data-ng-show="converterForm.weight.$error.required">Weight is required.</span>
+            </span>
+	  </div>
+        </div> <!-- row end -->
+   
+       <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-3 text-right">
+          <label> Result : </label>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2">
+          <span id="bmi_text" data-ng-bind="bmi"></span>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-3">
+            <button type="reset" class="btn btn-danger" data-ng-click="resetForm(convert)">Reset</button>
+          </div>
+       </div>
+    </form>
